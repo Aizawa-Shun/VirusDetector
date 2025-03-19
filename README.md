@@ -187,4 +187,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - ResNet architecture implementation based on torchvision
-- Focal Loss implementation based on the original paper: [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
