@@ -1,0 +1,46 @@
+# Main mode setting: train or predict
+mode: "predict"
+
+# Training settings
+training:
+  # Data directory (containing train/val subdirectories)
+  data_dir: "./data"
+  # Number of training epochs
+  num_epochs: 10
+  # Batch size
+  batch_size: 16
+  # Learning rate
+  learning_rate: 0.001
+  # Loss function: "cross_entropy" or "focal"
+  loss_function: "focal"
+  # Focal Loss parameters
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  # Path to save trained model
+  model_save_path: "./model/virus_model.pth"
+  # Class names for Positive/Negative identification
+  classes: ["Positive", "Negative", "Uncertain"]
+
+# Prediction and analysis settings
+prediction:
+  # Path to trained model
+  model_path: "./model/virus_model.pth"
+  # Input images directory
+  input_folder: "./input"
+  # Output directory
+  output_folder: "./output"
+  # Threshold for determining "high" uncertainty
+  uncertainty_threshold: 0.25
+  # Whether to include uncertainty analysis
+  include_uncertainty_analysis: true
+  # Grad-CAM integration method ("average" or "max")
+  integration_method: "average"
+  # Class names for Positive/Negative identification
+  classes: ["Positive", "Negative", "Uncertain"]
+
+# Additional options
+options:
+  # Whether to run evaluation after training
+  evaluate_after_training: true
+  # Whether to output detailed logs
+  verbose_logging: true
